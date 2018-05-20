@@ -1,0 +1,15 @@
+extends: 
+  - airbnb
+  - prettier
+plugins:
+  - jsx-a11y
+  - import
+  - react
+  - prettier
+rules:
+  react/prefer-stateless-function: off
+  react/sort-comp: warn
+  react/jsx-filename-extension: off
+  linebreak-style: off
+  no-undef: error
+  prettier/prettier: error
