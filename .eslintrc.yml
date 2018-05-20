@@ -13,3 +13,5 @@ rules:
   linebreak-style: off
   no-undef: error
   prettier/prettier: error
+settings:
+  import/resolver: reactnative
