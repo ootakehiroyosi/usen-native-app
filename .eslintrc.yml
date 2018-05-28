@@ -8,6 +8,12 @@ plugins:
   - react-native
   - prettier
 rules:
+  qutes:
+    - warn
+    - single
+  indent:
+    - warn
+    - 2
   react/prefer-stateless-function: off
   react/sort-comp: warn
   react/jsx-filename-extension: off
