@@ -8,7 +8,7 @@ plugins:
   - react-native
   - prettier
 rules:
-  qutes:
+  quotes:
     - warn
     - single
   indent:
