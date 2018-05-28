@@ -26,7 +26,9 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./src/main/js/**",
+    "fix": "eslint --fix"
   },
   "lint-staged": {
     "*.{js, jsx}": [
