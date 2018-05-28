@@ -5,11 +5,16 @@ plugins:
   - jsx-a11y
   - import
   - react
+  - react-native
   - prettier
 rules:
   react/prefer-stateless-function: off
   react/sort-comp: warn
   react/jsx-filename-extension: off
+  react-native/no-unused-styles: error 
+  react-native/no-color-literals: off
+  react-native/split-platform-components: off
+  react-native/no-inline-styles: warn
   linebreak-style: off
   no-undef: error
   prettier/prettier: error
