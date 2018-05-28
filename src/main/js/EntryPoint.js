@@ -1,4 +1,4 @@
 import Expo from "expo";
-import App from "animehopping-react-native/js/src/App";
+import App from "./App";
 
 Expo.registerRootComponent(App);
