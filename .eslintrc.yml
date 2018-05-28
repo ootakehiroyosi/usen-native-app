@@ -12,7 +12,7 @@ rules:
     - warn
     - single
   indent:
-    - warn
+    - error
     - 2
   react/prefer-stateless-function: off
   react/sort-comp: warn
