@@ -1,5 +1,5 @@
 {
-  "name": "animehopping-react-native",
+  "name": "usen-native-app",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -28,7 +28,7 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "lint": "eslint ./src/main/js/**",
-    "fix": "eslint --fix"
+    "fix": "eslint --fix ./src/main/js/**"
   },
   "lint-staged": {
     "*.{js, jsx}": [
