@@ -19,7 +19,7 @@
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
-  "main": "./src/main/js/EntryPoint.js",
+  "main": "./index.js",
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-native-scripts start",
@@ -28,11 +28,11 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "lint": "eslint ./src/main/js/**",
-    "fix": "eslint --fix ./src/main/js/**"
+    "fmt": "eslint --fix ./src/main/js/** & prettier --write ./src/main/js/**"
   },
   "lint-staged": {
     "*.{js, jsx}": [
-      "eslint --fix",
+      "yarn fmt",
       "git add"
     ]
   },

@@ -1,7 +1,6 @@
 import React from "react";
-import App from "../src/App";
-
 import renderer from "react-test-renderer";
+import App from "../main/js/App";
 
 it("renders without crashing", () => {
   const rendered = renderer.create(<App />).toJSON();
