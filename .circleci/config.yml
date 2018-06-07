@@ -44,7 +44,7 @@ jobs:
       - run: exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
       - run:
           name: Deploying to Expo
-          command: exp build:android
+          command: exp build:ios
 
 workflows:
   version: 2
@@ -54,3 +54,6 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: add-circleci
