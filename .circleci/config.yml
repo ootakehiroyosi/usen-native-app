@@ -41,10 +41,12 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
       - run:
           name: Deploying to Expo
-          command: exp build:ios
+          command: |
+            export PATH="$PATH:$( yarn global bin )"
+            exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
+            exp publish --non-interactive
 
 workflows:
   version: 2
@@ -54,6 +56,3 @@ workflows:
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only: add-circleci
