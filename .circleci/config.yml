@@ -36,7 +36,7 @@ jobs:
           command: yarn install
       - run:
           name: Installing exp
-          command: yarn add exp
+          command: yarn global add exp
       - save_cache:
           paths:
             - node_modules
