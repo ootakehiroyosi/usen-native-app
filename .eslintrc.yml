@@ -26,6 +26,7 @@ rules:
   react-native/no-color-literals: off
   react-native/split-platform-components: off
   react-native/no-inline-styles: warn
+  react/prop-types: off
   linebreak-style: off
   no-undef: error
   prettier/prettier: error

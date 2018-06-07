@@ -1,21 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "react-navigation";
+import HomeScreen from "./screens/HomeScreen";
+import NextScreen from "./screens/NextScreen";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+// ルーティング設定
+const RootStack = createStackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Next: {
+    screen: NextScreen,
+    navigationOptions: {
+      headerTitle: "Next"
+    }
   }
 });
 
-const App = () => (
-  <View style={styles.container}>
-    <Text>Open up App.js to start working on your app!</Text>
-    <Text>Changes you make will automatically reload.</Text>
-    <Text>Shake your phone to open the developer menu.</Text>
-  </View>
-);
-
-export default App;
+export default function App() {
+  return <RootStack />;
+}
