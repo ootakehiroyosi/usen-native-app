@@ -19,7 +19,7 @@ const RootStack = createStackNavigator(
     Next: {
       screen: NextScreen,
       navigationOptions: {
-        headerTitle: "Next"
+        header: null
       }
     }
   },
@@ -44,7 +44,7 @@ const RootStack = createStackNavigator(
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#ddd" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#aaa" }}>
       <RootStack />
     </SafeAreaView>
   );
