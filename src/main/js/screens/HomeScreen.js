@@ -1,19 +1,35 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button, Image } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Image,
+  Dimensions
+} from "react-native";
 
 const pic = {
   uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
 };
+
+const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 50,
     marginLeft: 10,
-    marginRight: 10
-  }
+    marginRight: 10,
+    backgroundColor: "#ddd"
+  },
+  movie_wrapper: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    flexWrap: "wrap"
+  },
+  movie_size: { aspectRatio: 3 / 2 }
 });
 
 const HomeScreen = props => (
@@ -21,17 +37,61 @@ const HomeScreen = props => (
     <View style={styles.header}>
       <Text>=</Text>
       <Button
-        style={{ height: 30 }}
         onPress={() => props.navigation.navigate("Next")}
         title="de Live"
       />
       <Text>◯</Text>
     </View>
+
     <View>
-      <Image source={pic} style={{ width: 193, height: 110 }} />
+      <ScrollView style={{ height: height - 120 }}>
+        <View>
+          <Image source={pic} style={{ height: 200 }} />
+        </View>
+
+        <Text style={styles.title}>Live配信中</Text>
+
+        <View style={styles.movie_wrapper}>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>ライブ1</Text>
+          </View>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>ライブ2</Text>
+          </View>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>ライブ3</Text>
+          </View>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>ライブ4</Text>
+          </View>
+        </View>
+
+        <Text style={styles.title}>おすすめ</Text>
+
+        <View style={styles.movie_wrapper}>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>動画2</Text>
+          </View>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>動画2</Text>
+          </View>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>動画3</Text>
+          </View>
+          <View style={{ width: "45%" }}>
+            <Image source={pic} style={styles.movie_size} />
+            <Text>動画4</Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
-    <Text style={styles.title}>de Live</Text>
-    <TextInput style={{ height: 40 }} placeholder="Type here to translate!" />
     <Button
       style={{ height: 30 }}
       onPress={() => props.navigation.navigate("SampleAuth")}
