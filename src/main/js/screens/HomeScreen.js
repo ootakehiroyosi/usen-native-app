@@ -5,35 +5,51 @@ import {
   Text,
   View,
   Button,
-  Image,
-  Dimensions
+  Image
+  // Dimensions
 } from "react-native";
 
 const pic = {
   uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
 };
 
-const { height } = Dimensions.get("window");
+// const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   header: {
+    position: "absolute",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginLeft: 10,
-    marginRight: 10,
-    backgroundColor: "#ddd"
+    paddingLeft: 10,
+    paddingRight: 10,
+    width: "100%",
+    height: 50,
+    zIndex: 999,
+    backgroundColor: "#aaa"
   },
-  movie_wrapper: {
+  scrollView: {
+    marginTop: 50
+  },
+  mainImage: { height: 200 },
+  title: {
+    padding: 10,
+    textAlign: "center",
+    fontSize: 20,
+    letterSpacing: 1.125
+  },
+  movieWrapper: {
     flexDirection: "row",
     justifyContent: "space-around",
     flexWrap: "wrap"
   },
-  movie_size: { aspectRatio: 3 / 2 }
+  movieWidth: { width: "45%" },
+  movieTitle: { paddingVertical: 10, paddingHorizontal: 5 },
+  movieAspect: { aspectRatio: 16 / 9 }
 });
 
 const HomeScreen = props => (
-  <View>
+  <View style={styles.wrapper}>
     <View style={styles.header}>
       <Text>=</Text>
       <Button
@@ -44,50 +60,50 @@ const HomeScreen = props => (
     </View>
 
     <View>
-      <ScrollView style={{ height: height - 120 }}>
+      <ScrollView style={styles.scrollView}>
         <View>
-          <Image source={pic} style={{ height: 200 }} />
+          <Image source={pic} style={styles.mainImage} />
         </View>
 
         <Text style={styles.title}>Live配信中</Text>
 
-        <View style={styles.movie_wrapper}>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>ライブ1</Text>
+        <View style={styles.movieWrapper}>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>ライブ1</Text>
           </View>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>ライブ2</Text>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>ライブ2</Text>
           </View>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>ライブ3</Text>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>ライブ3</Text>
           </View>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>ライブ4</Text>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>ライブ4</Text>
           </View>
         </View>
 
         <Text style={styles.title}>おすすめ</Text>
 
-        <View style={styles.movie_wrapper}>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>動画2</Text>
+        <View style={styles.movieWrapper}>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>動画2</Text>
           </View>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>動画2</Text>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>動画2</Text>
           </View>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>動画3</Text>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>動画3</Text>
           </View>
-          <View style={{ width: "45%" }}>
-            <Image source={pic} style={styles.movie_size} />
-            <Text>動画4</Text>
+          <View style={styles.movieWidth}>
+            <Image source={pic} style={styles.movieAspect} />
+            <Text style={styles.movieTitle}>動画4</Text>
           </View>
         </View>
       </ScrollView>
