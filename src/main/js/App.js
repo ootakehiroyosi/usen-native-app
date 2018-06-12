@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "react-navigation";
 import HomeScreen from "./screens/HomeScreen";
 import NextScreen from "./screens/NextScreen";
+import SampleAuthScreen from "./screens/SampleAuthScreen";
 
 // ルーティング設定
 const RootStack = createStackNavigator({
@@ -15,6 +16,12 @@ const RootStack = createStackNavigator({
     screen: NextScreen,
     navigationOptions: {
       headerTitle: "Next"
+    }
+  },
+  SampleAuth: {
+    screen: SampleAuthScreen,
+    navigationOptions: {
+      headerTitle: "SampleAuth"
     }
   }
 });

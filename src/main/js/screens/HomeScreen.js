@@ -32,6 +32,11 @@ const HomeScreen = props => (
     </View>
     <Text style={styles.title}>de Live</Text>
     <TextInput style={{ height: 40 }} placeholder="Type here to translate!" />
+    <Button
+      style={{ height: 30 }}
+      onPress={() => props.navigation.navigate("SampleAuth")}
+      title="SampleAuth"
+    />
   </View>
 );
 
