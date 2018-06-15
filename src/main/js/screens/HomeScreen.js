@@ -37,6 +37,11 @@ const HomeScreen = props => (
       onPress={() => props.navigation.navigate("SampleAuth")}
       title="SampleAuth"
     />
+    <Button
+      style={{ height: 30 }}
+      onPress={() => props.navigation.navigate("SampleLive")}
+      title="SampleLive"
+    />
   </View>
 );
 
