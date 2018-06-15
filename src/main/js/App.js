@@ -21,23 +21,23 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         header: null
       }
+    },
+    SampleAuth: {
+      screen: SampleAuthScreen,
+      navigationOptions: {
+        headerTitle: "SampleAuth"
+      }
+    },
+    SampleLive: {
+      screen: SampleLiveScreen,
+      navigationOptions: {
+        headerTitle: "SampleLive"
+      }
     }
   },
   {
     cardStyle: {
       shadowColor: "transparent"
-    }
-  },
-  SampleAuth: {
-    screen: SampleAuthScreen,
-    navigationOptions: {
-      headerTitle: "SampleAuth"
-    }
-  },
-  SampleLive: {
-    screen: SampleLiveScreen,
-    navigationOptions: {
-      headerTitle: "SampleLive"
     }
   }
 );
