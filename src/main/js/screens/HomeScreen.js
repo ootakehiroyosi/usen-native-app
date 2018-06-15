@@ -115,6 +115,16 @@ const HomeScreen = props => (
           <Text style={styles.movieTitle}>動画4</Text>
         </View>
       </View>
+      <Button
+        style={{ height: 30 }}
+        onPress={() => props.navigation.navigate("SampleAuth")}
+        title="SampleAuth"
+      />
+      <Button
+        style={{ height: 30 }}
+        onPress={() => props.navigation.navigate("SampleLive")}
+        title="SampleLive"
+      />
     </ScrollView>
 
     <View style={styles.footerNavi}>
@@ -124,16 +134,6 @@ const HomeScreen = props => (
       <Button title="FAV" onPress={() => props.navigation.navigate("Next")} />
       <Button title="MAY" onPress={() => props.navigation.navigate("Next")} />
     </View>
-    <Button
-      style={{ height: 30 }}
-      onPress={() => props.navigation.navigate("SampleAuth")}
-      title="SampleAuth"
-    />
-    <Button
-      style={{ height: 30 }}
-      onPress={() => props.navigation.navigate("SampleLive")}
-      title="SampleLive"
-    />
   </View>
 );
 
