@@ -22,8 +22,8 @@ const HomeScreen = props => (
       <Text>=</Text>
       <Button
         style={{ height: 30 }}
-        onPress={() => props.navigation.navigate("Next")}
-        title="de Live"
+        onPress={() => props.navigation.navigate("Hello")}
+        title="Hello expo"
       />
       <Text>◯</Text>
     </View>
