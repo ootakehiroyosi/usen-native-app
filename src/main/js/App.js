@@ -5,6 +5,8 @@ import { SafeAreaView } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import NextScreen from "./screens/NextScreen";
 import MyPageScreen from "./screens/MyPageScreen";
+import SampleAuthScreen from "./screens/SampleAuthScreen";
+import SampleLiveScreen from "./screens/SampleLiveScreen";
 
 // ルーティング設定
 const RootStack = createStackNavigator(
@@ -21,6 +23,19 @@ const RootStack = createStackNavigator(
         header: null
       }
     },
+    SampleAuth: {
+      screen: SampleAuthScreen,
+      navigationOptions: {
+        headerTitle: "SampleAuth"
+      }
+    },
+    SampleLive: {
+      screen: SampleLiveScreen,
+      navigationOptions: {
+        headerTitle: "SampleLive"
+      }
+    },
+
     MyPage: {
       screen: MyPageScreen,
       navigationOptions: {
@@ -28,6 +43,7 @@ const RootStack = createStackNavigator(
       }
     }
   },
+
   {
     cardStyle: {
       shadowColor: "transparent"
