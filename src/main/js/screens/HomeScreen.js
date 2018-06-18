@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   header: {
     position: "absolute",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     paddingLeft: 10,
     paddingRight: 10,
@@ -62,12 +62,10 @@ const styles = StyleSheet.create({
 const HomeScreen = props => (
   <View style={styles.wrapper}>
     <View style={styles.header}>
-      <Text>=</Text>
       <Button
         onPress={() => props.navigation.navigate("Next")}
         title="de Live"
       />
-      <Text>検索</Text>
     </View>
 
     <ScrollView style={styles.scrollView}>
