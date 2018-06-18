@@ -1,10 +1,10 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation";
 import HomeScreen from "./screens/HomeScreen";
-import NextScreen from "./screens/NextScreen";
+import SwitchTest from "./screens/SwitchTest";
 import SearchScreen from "./screens/SearchScreen";
-import UserScreen from "./screens/UserScreen";
 import Hello from "./screens/Hello";
+import AnimationTest from "./screens/AnimationTest";
 
 // ルーティング設定
 const RootStack = createStackNavigator({
@@ -14,22 +14,22 @@ const RootStack = createStackNavigator({
       header: null
     }
   },
-  Next: {
-    screen: NextScreen,
+  SwitchTest: {
+    screen: SwitchTest,
     navigationOptions: {
       headerTitle: "Switch test"
+    }
+  },
+  AnimationTest: {
+    screen: AnimationTest,
+    navigationOptions: {
+      headerTitle: "Change IMG Animation"
     }
   },
   Search: {
     screen: SearchScreen,
     navigationOptions: {
       headerTitle: "Picker sample"
-    }
-  },
-  User: {
-    screen: UserScreen,
-    navigationOptions: {
-      headerTitle: "no content"
     }
   },
   Hello: {

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Constants } from "expo";
 
-class NextScreen extends React.Component {
+class SwitchTest extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,4 +38,4 @@ class NextScreen extends React.Component {
   }
 }
 
-export default NextScreen;
+export default SwitchTest;

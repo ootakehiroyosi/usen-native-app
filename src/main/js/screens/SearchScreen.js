@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Button, StyleSheet, Picker } from "react-native";
+import { Text, View, Button, Alert, StyleSheet, Picker } from "react-native";
 
 const programmingLanguages = [
   {
@@ -25,21 +25,44 @@ const styles = StyleSheet.create({
   }
 });
 
-const SearchScreen = props => (
-  <View>
-    <View style={{ alignItems: "center" }}>
-      <Button
-        style={styles.submit}
-        onPress={() => props.navigation.navigate("User")}
-        title="Next"
-      />
-    </View>
-    <Picker>
-      {programmingLanguages.map((i, index) => (
-        <Picker.Item key={index} label={i.label} value={i.value} />
-      ))}
-    </Picker>
-  </View>
-);
+class SearchScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hello: "こんにちは",
+      job: ""
+    };
+  }
+
+  render() {
+    return (
+      <View>
+        <View style={{ alignItems: "center" }}>
+          <Button
+            style={styles.submit}
+            onPress={() => this.props.navigation.navigate("Home")}
+            title="Back home"
+          />
+          <Button
+            title={this.state.job}
+            onPress={this._handlePress.bind(this)}
+          />
+        </View>
+        <Picker
+          selectedValue={this.state.job}
+          onValueChange={itemValue => this.setState({ job: itemValue })}
+        >
+          {programmingLanguages.map((i, index) => (
+            <Picker.Item key={index} label={i.label} value={i.value} />
+          ))}
+        </Picker>
+      </View>
+    );
+  }
+
+  _handlePress(e) {
+    Alert.alert(this.state.job);
+  }
+}
 
 export default SearchScreen;

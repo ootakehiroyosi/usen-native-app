@@ -21,7 +21,7 @@ class Hello extends React.Component {
         />
         <Button
           style={{ height: 30 }}
-          onPress={() => this.props.navigation.navigate("Next")}
+          onPress={() => this.props.navigation.navigate("AnimationTest")}
           title="Next"
         />
       </View>
