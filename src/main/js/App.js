@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native";
 
 import HomeScreen from "./screens/HomeScreen";
 import NextScreen from "./screens/NextScreen";
+import MyPageScreen from "./screens/MyPageScreen";
 
 // ルーティング設定
 const RootStack = createStackNavigator(
@@ -16,6 +17,12 @@ const RootStack = createStackNavigator(
     },
     Next: {
       screen: NextScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+    MyPage: {
+      screen: MyPageScreen,
       navigationOptions: {
         header: null
       }

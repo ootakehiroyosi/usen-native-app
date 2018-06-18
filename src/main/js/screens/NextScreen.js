@@ -1,10 +1,14 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
 
-export default function NextScreen() {
-  return (
-    <View>
-      <Text>Next!!</Text>
-    </View>
-  );
-}
+const NextScreen = props => (
+  <View>
+    <Text>Next!!</Text>
+    <Button
+      onPress={() => props.navigation.navigate("MyPage")}
+      title="my page"
+    />
+  </View>
+);
+
+export default NextScreen;
