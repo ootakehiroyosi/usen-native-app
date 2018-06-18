@@ -14,6 +14,12 @@ const pic = {
   uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
 };
 
+const homeIcon = require("../../img/home.png");
+const searchIcon = require("../../img/search.png");
+const liveIcon = require("../../img/live.png");
+const subscribeIcon = require("../../img/subscribe.png");
+const myPageIcon = require("../../img/myPage.png");
+
 const styles = StyleSheet.create({
   header: {
     position: "absolute",
@@ -150,11 +156,21 @@ const HomeScreen = props => (
     </ScrollView>
 
     <View style={styles.footerNavi}>
-      <Button title="HOM" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="SEA" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="000" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="FAV" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="MAY" onPress={() => props.navigation.navigate("Next")} />
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={homeIcon} style={{ height: 30, width: 30 }} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={searchIcon} style={{ height: 30, width: 30 }} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={liveIcon} style={{ height: 30, width: 30 }} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={subscribeIcon} style={{ height: 30, width: 30 }} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={myPageIcon} style={{ height: 30, width: 30 }} />
+      </TouchableHighlight>
     </View>
   </View>
 );
