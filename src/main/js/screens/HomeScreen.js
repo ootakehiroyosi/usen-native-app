@@ -1,10 +1,11 @@
 import React from "react";
 import {
+  Button,
   ScrollView,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View,
-  Button,
   Image,
   Platform
 } from "react-native";
@@ -78,19 +79,30 @@ const HomeScreen = props => (
 
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ1</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ2</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ3</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ4</Text>
         </View>
       </View>
@@ -99,22 +111,34 @@ const HomeScreen = props => (
 
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画2</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画2</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画3</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={pic} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画4</Text>
         </View>
       </View>
+
       <Button
         style={{ height: 30 }}
         onPress={() => props.navigation.navigate("SampleAuth")}
