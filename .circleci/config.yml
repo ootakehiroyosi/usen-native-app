@@ -18,8 +18,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}`Preformatted text`
       - run:
-          name: Running Jest Tests
-          command: yarn run test
+          name: Create ENV
+          command: cp src/main/js/env.js.sample src/main/js/env.js
+      - run:
+          name: Running Lint Tests
+          command: yarn run lint
 
   deploy:
     docker:
@@ -31,6 +34,9 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
+      - run:
+          name: Create ENV
+          command: cp src/main/js/env.js.sample src/main/js/env.js
       - run:
           name: Installing yarn
           command: yarn install
