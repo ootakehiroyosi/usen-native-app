@@ -13,8 +13,6 @@ const pic = {
   uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
 };
 
-// const { height } = Dimensions.get("window");
-
 const styles = StyleSheet.create({
   header: {
     position: "absolute",
