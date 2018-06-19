@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
   mainImage: { height: 200 },
   title: {
     padding: 10,
-    textAlign: "center",
     fontSize: 20,
     letterSpacing: 1.125
   },
