@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#aaa",
     marginTop: Platform.OS === "android" ? 20 : 0
   },
+  footerIcon: {
+    height: 30,
+    width: 30
+  },
   scrollView: {
     marginTop: 50,
     marginBottom: 30
@@ -157,19 +161,19 @@ const HomeScreen = props => (
 
     <View style={styles.footerNavi}>
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-        <Image source={homeIcon} style={{ height: 30, width: 30 }} />
+        <Image source={homeIcon} style={styles.footerIcon} />
       </TouchableHighlight>
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-        <Image source={searchIcon} style={{ height: 30, width: 30 }} />
+        <Image source={searchIcon} style={styles.footerIcon} />
       </TouchableHighlight>
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-        <Image source={liveIcon} style={{ height: 30, width: 30 }} />
+        <Image source={liveIcon} style={styles.footerIcon} />
       </TouchableHighlight>
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-        <Image source={subscribeIcon} style={{ height: 30, width: 30 }} />
+        <Image source={subscribeIcon} style={styles.footerIcon} />
       </TouchableHighlight>
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-        <Image source={myPageIcon} style={{ height: 30, width: 30 }} />
+        <Image source={myPageIcon} style={styles.footerIcon} />
       </TouchableHighlight>
     </View>
   </View>
