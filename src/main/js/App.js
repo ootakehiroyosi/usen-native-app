@@ -37,7 +37,8 @@ const RootStack = createStackNavigator(
     Search: {
       screen: SearchScreen,
       navigationOptions: {
-        headerTitle: "Search"
+        headerTitle: "Search",
+        headerForceInset: true
       }
     }
   },

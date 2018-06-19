@@ -162,7 +162,7 @@ const HomeScreen = props => (
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
         <Image source={homeIcon} style={styles.footerIcon} />
       </TouchableHighlight>
-      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Search")}>
         <Image source={searchIcon} style={styles.footerIcon} />
       </TouchableHighlight>
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>

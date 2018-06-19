@@ -1,5 +1,13 @@
 import React from "react";
-import { Text, View, Button, Alert, StyleSheet, Picker, ScrollView, TouchableHighlight } from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  Picker,
+  ScrollView,
+  TouchableHighlight
+} from "react-native";
 
 const country = [
   {
@@ -46,7 +54,7 @@ const prefectures = [
   }
 ];
 
-const prefectures_us = [
+const prefecturesUs = [
   {
     label: "フロリダ州",
     value: "フロリダ州"
@@ -64,7 +72,7 @@ const prefectures_us = [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingHorizontal: 10
   },
   submit: {
@@ -72,8 +80,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#000",
-    marginLeft :50,
-    marginRight:50
+    marginLeft: 50,
+    marginRight: 50
   },
   textView: {
     backgroundColor: "#000",
@@ -84,13 +92,12 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   pickerItem: {
-    marginLeft :100,
-    marginRight:100
+    marginLeft: 100,
+    marginRight: 100
   }
 });
 
 class SearchScreen extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -101,55 +108,64 @@ class SearchScreen extends React.Component {
   }
 
   renderSearchPicker() {
-    if( this.state.country == "アメリカ" )
+    if (this.state.country.toString() === "アメリカ")
       return (
         <View style={styles.pickerItem}>
           <Picker
-            style={{ height: 140}} itemStyle={{height: 140}}
-            selectedValue={this.state.prefectures_us}
-            onValueChange={itemValue => this.setState({ prefectures: itemValue })} >
-            { prefectures_us.map((i, index) => ( 
-              <Picker.Item key={index} label={i.label} value={i.value} /> ))}
-          </Picker>
-        </View>
-      );
-    else
-      return (
-        <View style={styles.pickerItem}>
-          <Picker
-            style={{ height: 140}} itemStyle={{height: 140}}
+            style={{ height: 140 }}
+            itemStyle={{ height: 140 }}
             selectedValue={this.state.prefectures}
-            onValueChange={itemValue => this.setState({ prefectures: itemValue })} >
-            { prefectures.map((i, index) => ( 
-              <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+            onValueChange={itemValue =>
+              this.setState({ prefectures: itemValue })
+            }
+          >
+            {prefecturesUs.map(i => (
+              <Picker.Item key={i.value} label={i.label} value={i.value} />
+            ))}
           </Picker>
         </View>
       );
+    return (
+      <View style={styles.pickerItem}>
+        <Picker
+          style={{ height: 140 }}
+          itemStyle={{ height: 140 }}
+          selectedValue={this.state.prefectures}
+          onValueChange={itemValue => this.setState({ prefectures: itemValue })}
+        >
+          {prefectures.map(i => (
+            <Picker.Item key={i.value} label={i.label} value={i.value} />
+          ))}
+        </Picker>
+      </View>
+    );
   }
 
   render() {
     return (
       <ScrollView>
         <View style={styles.container}>
-
           <View style={styles.textView}>
             <Text style={styles.textItem}>国の選択</Text>
           </View>
 
           <View style={styles.pickerItem}>
             <Picker
-              style={{ height: 140}} itemStyle={{height: 140}}
+              style={{ height: 140 }}
+              itemStyle={{ height: 140 }}
               selectedValue={this.state.country}
-              onValueChange={itemValue => this.setState({ country: itemValue })} >
-              { country.map((i, index) => ( 
-                <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+              onValueChange={itemValue => this.setState({ country: itemValue })}
+            >
+              {country.map(i => (
+                <Picker.Item key={i.value} label={i.label} value={i.value} />
+              ))}
             </Picker>
           </View>
 
           <View style={styles.textView}>
             <Text style={styles.textItem}>地域の選択</Text>
           </View>
-          { this.renderSearchPicker() }
+          {this.renderSearchPicker()}
 
           <View style={styles.textView}>
             <Text style={styles.textItem}>ジャンルの選択</Text>
@@ -157,11 +173,14 @@ class SearchScreen extends React.Component {
 
           <View style={styles.pickerItem}>
             <Picker
-              style={{ height: 140}} itemStyle={{height: 140}}
+              style={{ height: 140 }}
+              itemStyle={{ height: 140 }}
               selectedValue={this.state.type}
-              onValueChange={itemValue => this.setState({ type: itemValue })} >
-              { type.map((i, index) => ( 
-                <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+              onValueChange={itemValue => this.setState({ type: itemValue })}
+            >
+              {type.map(i => (
+                <Picker.Item key={i.value} label={i.label} value={i.value} />
+              ))}
             </Picker>
           </View>
 
@@ -169,7 +188,8 @@ class SearchScreen extends React.Component {
             <Button
               title="検索"
               onPress={() => this.props.navigation.navigate("Home")}
-              color="black" />
+              color="black"
+            />
           </TouchableHighlight>
 
           <View style={{ alignItems: "center", marginTop: 20 }}>
@@ -178,7 +198,6 @@ class SearchScreen extends React.Component {
             <Text>{this.state.prefectures}</Text>
             <Text>{this.state.type}</Text>
           </View>
-
         </View>
       </ScrollView>
     );
