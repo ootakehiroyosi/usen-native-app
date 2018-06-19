@@ -29,7 +29,7 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "lint": "eslint ./src/main/js/**.js",
-    "fmt": "eslint --fix ./src/main/js/**.js & prettier --write ./src/main/js/**.js"
+    "fmt": "eslint --fix ./src/main/js/**/**.js & prettier --write ./src/main/js/**/**.js"
   },
   "lint-staged": {
     "*.{js, jsx}": [
