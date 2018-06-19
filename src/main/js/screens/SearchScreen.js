@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
   },
   textItem: {
     color: "#fff"
+  },
+  pickerItem: {
+    marginLeft :100,
+    marginRight:100
   }
 });
 
@@ -90,30 +94,36 @@ class SearchScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: "",
+      type: "中華",
       country: "日本",
-      prefectures: ""
+      prefectures: "東京"
     };
   }
 
   renderSearchPicker() {
     if( this.state.country == "アメリカ" )
       return (
-        <Picker
-          selectedValue={this.state.prefectures_us}
-          onValueChange={itemValue => this.setState({ prefectures: itemValue })} >
-          { prefectures_us.map((i, index) => ( 
-            <Picker.Item key={index} label={i.label} value={i.value} /> ))}
-        </Picker>
+        <View style={styles.pickerItem}>
+          <Picker
+            style={{ height: 140}} itemStyle={{height: 140}}
+            selectedValue={this.state.prefectures_us}
+            onValueChange={itemValue => this.setState({ prefectures: itemValue })} >
+            { prefectures_us.map((i, index) => ( 
+              <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+          </Picker>
+        </View>
       );
     else
       return (
-        <Picker
-          selectedValue={this.state.prefectures}
-          onValueChange={itemValue => this.setState({ prefectures: itemValue })} >
-          { prefectures.map((i, index) => ( 
-            <Picker.Item key={index} label={i.label} value={i.value} /> ))}
-        </Picker>
+        <View style={styles.pickerItem}>
+          <Picker
+            style={{ height: 140}} itemStyle={{height: 140}}
+            selectedValue={this.state.prefectures}
+            onValueChange={itemValue => this.setState({ prefectures: itemValue })} >
+            { prefectures.map((i, index) => ( 
+              <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+          </Picker>
+        </View>
       );
   }
 
@@ -125,12 +135,16 @@ class SearchScreen extends React.Component {
           <View style={styles.textView}>
             <Text style={styles.textItem}>国の選択</Text>
           </View>
-          <Picker
-            selectedValue={this.state.country}
-            onValueChange={itemValue => this.setState({ country: itemValue })} >
-            { country.map((i, index) => ( 
-              <Picker.Item key={index} label={i.label} value={i.value} /> ))}
-          </Picker>
+
+          <View style={styles.pickerItem}>
+            <Picker
+              style={{ height: 140}} itemStyle={{height: 140}}
+              selectedValue={this.state.country}
+              onValueChange={itemValue => this.setState({ country: itemValue })} >
+              { country.map((i, index) => ( 
+                <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+            </Picker>
+          </View>
 
           <View style={styles.textView}>
             <Text style={styles.textItem}>地域の選択</Text>
@@ -140,12 +154,16 @@ class SearchScreen extends React.Component {
           <View style={styles.textView}>
             <Text style={styles.textItem}>ジャンルの選択</Text>
           </View>
-          <Picker
-            selectedValue={this.state.type}
-            onValueChange={itemValue => this.setState({ type: itemValue })} >
-            { type.map((i, index) => ( 
-              <Picker.Item key={index} label={i.label} value={i.value} /> ))}
-          </Picker>
+
+          <View style={styles.pickerItem}>
+            <Picker
+              style={{ height: 140}} itemStyle={{height: 140}}
+              selectedValue={this.state.type}
+              onValueChange={itemValue => this.setState({ type: itemValue })} >
+              { type.map((i, index) => ( 
+                <Picker.Item key={index} label={i.label} value={i.value} /> ))}
+            </Picker>
+          </View>
 
           <TouchableHighlight style={styles.submit}>
             <Button
