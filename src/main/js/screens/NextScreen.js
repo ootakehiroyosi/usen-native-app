@@ -15,7 +15,7 @@ import {
   StyleSheet
 } from "native-base";
 
-export default class ListThumbnailExample extends Component {
+class SearchList extends Component {
   render() {
     return (
       <Container>
@@ -93,23 +93,8 @@ export default class ListThumbnailExample extends Component {
             </ListItem>
           </List>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button>
-              <Icon name="apps" />
-            </Button>
-            <Button>
-              <Icon name="camera" />
-            </Button>
-            <Button>
-              <Icon name="navigate" />
-            </Button>
-            <Button>
-              <Icon name="person" />
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }
 }
+export default SearchList;

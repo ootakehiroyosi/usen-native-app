@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TextInput, Button, Image } from "react-native";
 const pic = {
   uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
 };
-
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
@@ -15,7 +14,6 @@ const styles = StyleSheet.create({
     marginRight: 10
   }
 });
-
 const HomeScreen = props => (
   <View>
     <View style={styles.header}>
@@ -30,6 +28,11 @@ const HomeScreen = props => (
     <View>
       <Image source={pic} style={{ width: 193, height: 110 }} />
     </View>
+    <Button
+      style={{ height: 30 }}
+      onPress={() => props.navigation.navigate("form")}
+      title="form"
+    />
     <Text style={styles.title}>de Live</Text>
     <TextInput style={{ height: 40 }} placeholder="Type here to translate!" />
   </View>
