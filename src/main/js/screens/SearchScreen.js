@@ -108,7 +108,7 @@ class SearchScreen extends React.Component {
   }
 
   renderSearchPicker() {
-    if (this.state.country === "アメリカ")
+    if (this.state.country.toString() === "アメリカ")
       return (
         <View style={styles.pickerItem}>
           <Picker
