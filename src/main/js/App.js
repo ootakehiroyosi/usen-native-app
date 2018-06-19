@@ -6,6 +6,8 @@ import HomeScreen from "./screens/HomeScreen";
 import NextScreen from "./screens/NextScreen";
 import SampleAuthScreen from "./screens/SampleAuthScreen";
 import SampleLiveScreen from "./screens/SampleLiveScreen";
+import formScreen from "./screens/formScreen";
+import SearchList from "./screens/SearchList";
 
 // ルーティング設定
 const RootStack = createStackNavigator(
@@ -20,6 +22,18 @@ const RootStack = createStackNavigator(
       screen: NextScreen,
       navigationOptions: {
         header: null
+      }
+    },
+    form: {
+      screen: formScreen,
+      navigationOptions: {
+        headerTitle: "form"
+      }
+    },
+    SearchList: {
+      screen: SearchList,
+      navigationOptions: {
+        headerTitle: "SearchList"
       }
     },
     SampleAuth: {
