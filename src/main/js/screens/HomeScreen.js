@@ -14,6 +14,7 @@ const pic = {
   uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
 };
 
+const mainVisual = require("../../img/deliveMainvisual.png");
 const homeIcon = require("../../img/home.png");
 const searchIcon = require("../../img/search.png");
 const liveIcon = require("../../img/live.png");
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 30
   },
-  mainImage: { height: 200 },
+  mainImage: { height: 200, width: "100%" },
   title: {
     padding: 10,
     fontSize: 20,
@@ -79,7 +80,7 @@ const HomeScreen = props => (
 
     <ScrollView style={styles.scrollView}>
       <View>
-        <Image source={pic} style={styles.mainImage} />
+        <Image source={mainVisual} style={styles.mainImage} />
       </View>
 
       <Text style={styles.title}>Live配信中</Text>
