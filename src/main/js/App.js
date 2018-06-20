@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native";
 
 import HomeScreen from "./screens/HomeScreen";
 import NextScreen from "./screens/NextScreen";
+import MyPageScreen from "./screens/MyPageScreen";
 import SampleAuthScreen from "./screens/SampleAuthScreen";
 import SampleLiveScreen from "./screens/SampleLiveScreen";
 import SearchScreen from "./screens/SearchScreen";
@@ -33,6 +34,13 @@ const RootStack = createStackNavigator(
       screen: SampleLiveScreen,
       navigationOptions: {
         headerTitle: "SampleLive"
+      }
+    },
+    MyPage: {
+      screen: MyPageScreen,
+      navigationOptions: {
+        headerTitle: "MyPage",
+        headerForceInset: true
       }
     },
     Search: {

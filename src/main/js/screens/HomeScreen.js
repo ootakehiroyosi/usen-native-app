@@ -171,7 +171,7 @@ const HomeScreen = props => (
       <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
         <Image source={subscribeIcon} style={styles.footerIcon} />
       </TouchableHighlight>
-      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+      <TouchableHighlight onPress={() => props.navigation.navigate("MyPage")}>
         <Image source={myPageIcon} style={styles.footerIcon} />
       </TouchableHighlight>
     </View>
