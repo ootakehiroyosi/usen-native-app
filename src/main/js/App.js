@@ -7,6 +7,7 @@ import NextScreen from "./screens/NextScreen";
 import SampleAuthScreen from "./screens/SampleAuthScreen";
 import SampleLiveScreen from "./screens/SampleLiveScreen";
 import SearchScreen from "./screens/SearchScreen";
+import LiveScreen from "./screens/LiveScreen";
 
 const RootStack = createStackNavigator(
   {
@@ -39,6 +40,12 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         headerTitle: "Search",
         headerForceInset: true
+      }
+    },
+    Live: {
+      screen: LiveScreen,
+      navigationOptions: {
+        headerTitle: "Live"
       }
     }
   },
