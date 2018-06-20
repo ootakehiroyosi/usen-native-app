@@ -187,7 +187,7 @@ class SearchScreen extends React.Component {
           <TouchableHighlight style={styles.submit}>
             <Button
               title="検索"
-              onPress={() => this.props.navigation.navigate("Home")}
+              onPress={() => this.props.navigation.navigate("SearchResult")}
               color="black"
             />
           </TouchableHighlight>
