@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 });
 
 const HomeScreen = props => (
-  <View style={styles.wrapper}>
+  <View>
     <View style={styles.header}>
       <Button
         onPress={() => props.navigation.navigate("Next")}
