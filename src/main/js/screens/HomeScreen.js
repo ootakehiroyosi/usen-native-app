@@ -86,7 +86,7 @@ const HomeScreen = props => (
 
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
-          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+          <TouchableHighlight onPress={() => props.navigation.navigate("Live")}>
             <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ1</Text>
