@@ -6,8 +6,8 @@ import {
   View,
   Button,
   TouchableOpacity,
-  Alert,
-  Image
+  Image,
+  Alert
 } from "react-native";
 
 import ENV from "../env";
@@ -36,15 +36,18 @@ const styles = StyleSheet.create({
 
 export default class LiveScreen extends React.Component {
   static tap(act) {
-    Alert.alert("action", `${act}を押しました`, [{ text: "OK" }], {
-      cancelable: false
-    });
+    Alert.alert(
+      "ボタンが押されました",
+      `${act}を押しました`,
+      [{ text: "OK" }],
+      { cancelable: false }
+    );
   }
 
   constructor() {
     super();
     this.source = {
-      uri: ENV.SAMPLE_VIDEO_URL
+      uri: ENV.SAMPLE_LIVE_URL
     };
     this.state = { up: "上" };
   }
