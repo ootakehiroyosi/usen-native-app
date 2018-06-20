@@ -7,8 +7,9 @@ import NextScreen from "./screens/NextScreen";
 import MyPageScreen from "./screens/MyPageScreen";
 import SampleAuthScreen from "./screens/SampleAuthScreen";
 import SampleLiveScreen from "./screens/SampleLiveScreen";
+import SearchScreen from "./screens/SearchScreen";
+import LiveScreen from "./screens/LiveScreen";
 
-// ルーティング設定
 const RootStack = createStackNavigator(
   {
     Home: {
@@ -35,15 +36,26 @@ const RootStack = createStackNavigator(
         headerTitle: "SampleLive"
       }
     },
-
     MyPage: {
       screen: MyPageScreen,
       navigationOptions: {
         header: null
       }
+    },
+    Search: {
+      screen: SearchScreen,
+      navigationOptions: {
+        headerTitle: "Search",
+        headerForceInset: true
+      }
+    },
+    Live: {
+      screen: LiveScreen,
+      navigationOptions: {
+        headerTitle: "Live"
+      }
     }
   },
-
   {
     cardStyle: {
       shadowColor: "transparent"
