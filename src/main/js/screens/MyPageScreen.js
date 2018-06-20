@@ -4,7 +4,6 @@ import {
   ScrollView,
   Text,
   View,
-  Button,
   Image,
   TouchableHighlight
 } from "react-native";
@@ -14,8 +13,7 @@ const pic1 = require("../../img/mypageSample1.jpg");
 const pic2 = require("../../img/mypageSample2.jpg");
 
 const styles = StyleSheet.create({
-  scrollView: { marginTop: 50 },
-  userName: { width: 100, fontSize: 26 },
+  userName: { fontSize: 26 },
   optionIcon: { width: 30, height: 30 },
   myPageWrapper: {
     paddingHorizontal: 10,
@@ -47,14 +45,9 @@ const styles = StyleSheet.create({
 const MyPageScreen = props => (
   <View>
     <ScrollView style={styles.scrollView}>
-      <Button
-        onPress={() => props.navigation.navigate("MyPage")}
-        title="my page"
-      />
-
       <View style={styles.myPageWrapper}>
         <View>
-          <Text style={styles.userName}>ほげほげ</Text>
+          <Text style={styles.userName}>竹澤 翔大</Text>
         </View>
 
         <View>

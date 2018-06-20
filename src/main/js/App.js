@@ -39,7 +39,8 @@ const RootStack = createStackNavigator(
     MyPage: {
       screen: MyPageScreen,
       navigationOptions: {
-        header: null
+        headerTitle: "MyPage",
+        headerForceInset: true
       }
     },
     Search: {
