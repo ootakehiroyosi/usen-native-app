@@ -2,10 +2,19 @@ import React from "react";
 import { View, Button, Alert, TextInput, StyleSheet, Text } from "react-native";
 
 class form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { form: "送信完了" };
+  constructor() {
+    super();
   }
+
+  tap() {
+    Alert.alert(
+      "要望を受け付けました",
+      "送信",
+      [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+      { cancelable: false }
+    );
+  }
+
   render() {
     return (
       <View>
@@ -45,16 +54,10 @@ class form extends React.Component {
             marginTop: 20
           }}
         />
-        <Button
-          title={this.state.form}
-          onPress={this._handlePress.bind(this)}
-          title="送信"
-        />
+        <Button onPress={() => this.tap()} title="送信" />
       </View>
     );
   }
-  _handlePress(e) {
-    Alert.alert(this.state.form);
-  }
 }
+
 export default form;
