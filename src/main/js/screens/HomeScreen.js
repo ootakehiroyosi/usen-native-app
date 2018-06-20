@@ -10,15 +10,15 @@ import {
   Platform
 } from "react-native";
 
-const pic = {
-  uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
-};
+const mainVisual = require("../../img/deliveMainvisual.png");
 
 const homeIcon = require("../../img/home.png");
 const searchIcon = require("../../img/search.png");
 const liveIcon = require("../../img/live.png");
 const subscribeIcon = require("../../img/subscribe.png");
 const myPageIcon = require("../../img/myPage.png");
+
+const liveImage = require("../../img/liveImageSample.jpg");
 
 const styles = StyleSheet.create({
   header: {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 30
   },
-  mainImage: { height: 200 },
+  mainImage: { height: 200, width: "100%" },
   title: {
     padding: 10,
     fontSize: 20,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   movieWidth: { width: "45%" },
   movieTitle: { paddingVertical: 10, paddingHorizontal: 5 },
-  movieAspect: { aspectRatio: 16 / 9 },
+  movieAspect: { height: 100, width: "100%" },
   footerNavi: {
     position: "absolute",
     bottom: 0,
@@ -79,7 +79,7 @@ const HomeScreen = props => (
 
     <ScrollView style={styles.scrollView}>
       <View>
-        <Image source={pic} style={styles.mainImage} />
+        <Image source={mainVisual} style={styles.mainImage} />
       </View>
 
       <Text style={styles.title}>Live配信中</Text>
@@ -87,28 +87,28 @@ const HomeScreen = props => (
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ1</Text>
         </View>
 
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ2</Text>
         </View>
 
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ3</Text>
         </View>
 
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ4</Text>
         </View>
@@ -119,28 +119,28 @@ const HomeScreen = props => (
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>動画2</Text>
         </View>
 
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>動画2</Text>
         </View>
 
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>動画3</Text>
         </View>
 
         <View style={styles.movieWidth}>
           <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
-            <Image source={pic} style={styles.movieAspect} />
+            <Image source={liveImage} style={styles.movieAspect} />
           </TouchableHighlight>
           <Text style={styles.movieTitle}>動画4</Text>
         </View>
