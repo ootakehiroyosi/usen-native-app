@@ -6,13 +6,9 @@ import {
   View,
   Button,
   TouchableOpacity,
-  Text,
   Alert,
-  Image,
-  Platform
+  Image
 } from "react-native";
-
-import VideoPlayer from "@expo/videoplayer";
 
 import ENV from "../env";
 
@@ -29,7 +25,7 @@ const styles = StyleSheet.create({
     width: 30
   },
   scrollView: {
-    backgroundColor: "#000"
+    backgroundColor: "transparent"
   },
   actWrapper: {
     flexDirection: "row",
@@ -38,11 +34,17 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class SampleAuthScreen extends React.Component {
+export default class LiveScreen extends React.Component {
+  static tap(act) {
+    Alert.alert("action", `${act}を押しました`, [{ text: "OK" }], {
+      cancelable: false
+    });
+  }
+
   constructor() {
     super();
     this.source = {
-      uri: ENV.SAMPLE_LIVE_URL
+      uri: ENV.SAMPLE_VIDEO_URL
     };
     this.state = { up: "上" };
   }
@@ -57,14 +59,6 @@ export default class SampleAuthScreen extends React.Component {
     this.playbackInstance.stopAsync();
     this.playbackInstance.unloadAsync();
     this.playbackInstance.loadAsync(this.source, { shouldPlay: true });
-  }
-  tap(act) {
-    Alert.alert(
-      "action",
-      `${act}を押しました`,
-      [{ text: "OK", onPress: () => console.log("OK Pressed") }],
-      { cancelable: false }
-    );
   }
 
   render() {
@@ -105,35 +99,35 @@ export default class SampleAuthScreen extends React.Component {
             <TouchableOpacity
               style={styles.button}
               title={this.state.up}
-              onPress={() => this.tap("up")}
+              onPress={() => LiveScreen.tap("up")}
             >
               <Image style={styles.button} source={upPic} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               title={this.state.up}
-              onPress={() => this.tap("right")}
+              onPress={() => LiveScreen.tap("right")}
             >
               <Image style={styles.button} source={rightPic} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               title={this.state.up}
-              onPress={() => this.tap("left")}
+              onPress={() => LiveScreen.tap("left")}
             >
               <Image style={styles.button} source={leftPic} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               title={this.state.up}
-              onPress={() => this.tap("under")}
+              onPress={() => LiveScreen.tap("under")}
             >
               <Image style={styles.button} source={underPic} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               title={this.state.up}
-              onPress={() => this.tap("wc")}
+              onPress={() => LiveScreen.tap("wc")}
             >
               <Image style={styles.button} source={wcPic} />
             </TouchableOpacity>
