@@ -1,23 +1,30 @@
 import React from "react";
 import {
+  Button,
   ScrollView,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View,
-  Button,
   Image,
   Platform
 } from "react-native";
 
-const pic = {
-  uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
-};
+const mainVisual = require("../../img/deliveMainvisual.png");
+
+const homeIcon = require("../../img/home.png");
+const searchIcon = require("../../img/search.png");
+const liveIcon = require("../../img/live.png");
+const subscribeIcon = require("../../img/subscribe.png");
+const myPageIcon = require("../../img/myPage.png");
+
+const liveImage = require("../../img/liveImageSample.jpg");
 
 const styles = StyleSheet.create({
   header: {
     position: "absolute",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     paddingLeft: 10,
     paddingRight: 10,
@@ -27,14 +34,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#aaa",
     marginTop: Platform.OS === "android" ? 20 : 0
   },
+  footerIcon: {
+    height: 30,
+    width: 30
+  },
   scrollView: {
     marginTop: 50,
     marginBottom: 30
   },
-  mainImage: { height: 200 },
+  mainImage: { height: 200, width: "100%" },
   title: {
     padding: 10,
-    textAlign: "center",
     fontSize: 20,
     letterSpacing: 1.125
   },
@@ -45,7 +55,7 @@ const styles = StyleSheet.create({
   },
   movieWidth: { width: "45%" },
   movieTitle: { paddingVertical: 10, paddingHorizontal: 5 },
-  movieAspect: { aspectRatio: 16 / 9 },
+  movieAspect: { height: 100, width: "100%" },
   footerNavi: {
     position: "absolute",
     bottom: 0,
@@ -59,38 +69,47 @@ const styles = StyleSheet.create({
 });
 
 const HomeScreen = props => (
-  <View style={styles.wrapper}>
+  <View>
     <View style={styles.header}>
-      <Text>=</Text>
       <Button
         onPress={() => props.navigation.navigate("Next")}
         title="de Live"
       />
-      <Text>検索</Text>
     </View>
 
     <ScrollView style={styles.scrollView}>
       <View>
-        <Image source={pic} style={styles.mainImage} />
+        <Image source={mainVisual} style={styles.mainImage} />
       </View>
 
       <Text style={styles.title}>Live配信中</Text>
 
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ1</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ2</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ3</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>ライブ4</Text>
         </View>
       </View>
@@ -99,22 +118,34 @@ const HomeScreen = props => (
 
       <View style={styles.movieWrapper}>
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画2</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画2</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画3</Text>
         </View>
+
         <View style={styles.movieWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+            <Image source={liveImage} style={styles.movieAspect} />
+          </TouchableHighlight>
           <Text style={styles.movieTitle}>動画4</Text>
         </View>
       </View>
+
       <Button
         style={{ height: 30 }}
         onPress={() => props.navigation.navigate("SampleAuth")}
@@ -128,11 +159,21 @@ const HomeScreen = props => (
     </ScrollView>
 
     <View style={styles.footerNavi}>
-      <Button title="HOM" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="SEA" onPress={() => props.navigation.navigate("Search")} />
-      <Button title="000" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="FAV" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="MAY" onPress={() => props.navigation.navigate("Next")} />
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={homeIcon} style={styles.footerIcon} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Search")}>
+        <Image source={searchIcon} style={styles.footerIcon} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={liveIcon} style={styles.footerIcon} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={subscribeIcon} style={styles.footerIcon} />
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => props.navigation.navigate("Next")}>
+        <Image source={myPageIcon} style={styles.footerIcon} />
+      </TouchableHighlight>
     </View>
   </View>
 );

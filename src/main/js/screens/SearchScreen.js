@@ -1,87 +1,207 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button, Image, TouchableHighlight } from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  Picker,
+  ScrollView,
+  TouchableHighlight
+} from "react-native";
 
-const pic = {
-  uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
-};
+const country = [
+  {
+    label: "アメリカ",
+    value: "アメリカ"
+  },
+  {
+    label: "日本",
+    value: "日本"
+  }
+];
+
+const type = [
+  {
+    label: "カフェ",
+    value: "カフェ"
+  },
+  {
+    label: "和食",
+    value: "和食"
+  },
+  {
+    label: "中華",
+    value: "中華"
+  },
+  {
+    label: "洋食",
+    value: "洋食"
+  }
+];
+
+const prefectures = [
+  {
+    label: "北海道",
+    value: "北海道"
+  },
+  {
+    label: "東京",
+    value: "東京"
+  },
+  {
+    label: "大阪",
+    value: "大阪"
+  }
+];
+
+const prefecturesUs = [
+  {
+    label: "フロリダ州",
+    value: "フロリダ州"
+  },
+  {
+    label: "コロラド州",
+    value: "コロラド州"
+  },
+  {
+    label: "ハワイ州",
+    value: "ハワイ州"
+  }
+];
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 10
+  },
+  submit: {
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#000",
+    marginLeft: 50,
+    marginRight: 50
+  },
+  textView: {
+    backgroundColor: "#000",
     alignItems: "center",
-    marginTop: 50,
-    marginLeft: 10,
-    marginRight: 10
+    padding: 10
   },
-  section: {
-    flexDirection: "row",
-    marginBottom: 10,
-    height: 100
+  textItem: {
+    color: "#fff"
   },
-  sectionImage: {
-    height: "100%",
-    aspectRatio: 16 / 9
-  },
-  textdata: {
-    flex: 1
-  },
-  textstyle: {
-    padding: 5
+  pickerItem: {
+    marginLeft: 100,
+    marginRight: 100
   }
 });
 
-const SearchScreen = props => (
-  <View>
-    <TextInput style={{ height: 40 }} placeholder="search" />
+class SearchScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: "中華",
+      country: "日本",
+      prefectures: "東京"
+    };
+  }
 
-    <View>
-      <Text>検索結果一覧</Text>
-
-      <View style={styles.section}>
-        <TouchableHighlight onPress={() => props.navigation.navigate("Result")}>
-          <Image source={pic} style={styles.sectionImage} />
-        </TouchableHighlight>
-        <View style={styles.textdata}>
-          <Text style={styles.textstyle}>町の有名なお店。</Text>
-          <Text style={styles.textstyle}>こだわりー　手作り食材からすべて作り上げています。</Text>
+  renderSearchPicker() {
+    if (this.state.country.toString() === "アメリカ")
+      return (
+        <View style={styles.pickerItem}>
+          <Picker
+            style={{ height: 140 }}
+            itemStyle={{ height: 140 }}
+            selectedValue={this.state.prefectures}
+            onValueChange={itemValue =>
+              this.setState({ prefectures: itemValue })
+            }
+          >
+            {prefecturesUs.map(i => (
+              <Picker.Item key={i.value} label={i.label} value={i.value} />
+            ))}
+          </Picker>
         </View>
+      );
+    return (
+      <View style={styles.pickerItem}>
+        <Picker
+          style={{ height: 140 }}
+          itemStyle={{ height: 140 }}
+          selectedValue={this.state.prefectures}
+          onValueChange={itemValue => this.setState({ prefectures: itemValue })}
+        >
+          {prefectures.map(i => (
+            <Picker.Item key={i.value} label={i.label} value={i.value} />
+          ))}
+        </Picker>
       </View>
+    );
+  }
 
-      <View style={styles.section}>
-        <TouchableHighlight onPress={() => props.navigation.navigate("Result")}>
-          <Image source={pic} style={styles.sectionImage} />
-        </TouchableHighlight>
-        <View style={styles.textdata}>
-          <Text style={styles.textstyle}>全席完全個室。</Text>
-          <Text style={styles.textstyle}>ミーティング用にピッタリ。</Text>
+  render() {
+    return (
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.textView}>
+            <Text style={styles.textItem}>国の選択</Text>
+          </View>
+
+          <View style={styles.pickerItem}>
+            <Picker
+              style={{ height: 140 }}
+              itemStyle={{ height: 140 }}
+              selectedValue={this.state.country}
+              onValueChange={itemValue => this.setState({ country: itemValue })}
+            >
+              {country.map(i => (
+                <Picker.Item key={i.value} label={i.label} value={i.value} />
+              ))}
+            </Picker>
+          </View>
+
+          <View style={styles.textView}>
+            <Text style={styles.textItem}>地域の選択</Text>
+          </View>
+          {this.renderSearchPicker()}
+
+          <View style={styles.textView}>
+            <Text style={styles.textItem}>ジャンルの選択</Text>
+          </View>
+
+          <View style={styles.pickerItem}>
+            <Picker
+              style={{ height: 140 }}
+              itemStyle={{ height: 140 }}
+              selectedValue={this.state.type}
+              onValueChange={itemValue => this.setState({ type: itemValue })}
+            >
+              {type.map(i => (
+                <Picker.Item key={i.value} label={i.label} value={i.value} />
+              ))}
+            </Picker>
+          </View>
+
+          <TouchableHighlight style={styles.submit}>
+            <Button
+              title="検索"
+              onPress={() => this.props.navigation.navigate("SearchResult")}
+              color="black"
+            />
+          </TouchableHighlight>
+
+          <View style={{ alignItems: "center", marginTop: 20 }}>
+            <Text style={{ marginBottom: 10 }}>検索条件</Text>
+            <Text>{this.state.country}</Text>
+            <Text>{this.state.prefectures}</Text>
+            <Text>{this.state.type}</Text>
+          </View>
         </View>
-      </View>
-
-      <View style={styles.section}>
-        <TouchableHighlight onPress={() => props.navigation.navigate("Result")}>
-          <Image source={pic} style={styles.sectionImage} />
-        </TouchableHighlight>
-        <View style={styles.textdata}>
-          <Text style={styles.textstyle}>駅からすぐ。</Text>
-          <Text style={styles.textstyle}>こだわりー　手作り食材からすべて作り上げています。</Text>
-        </View>
-      </View>
-
-      <View style={styles.section}>
-        <TouchableHighlight onPress={() => props.navigation.navigate("Result")}>
-          <Image source={pic} style={styles.sectionImage} />
-        </TouchableHighlight>
-        <View　style={styles.textdata}>
-          <Text style={styles.textstyle}>ALL DAY COFFEE。</Text>
-          <Text style={styles.textstyle}>コーヒー種類豊富。</Text>
-        </View>
-      </View>
-
-    </View>
-
-  </View>
-
-);
+      </ScrollView>
+    );
+  }
+}
 
 export default SearchScreen;

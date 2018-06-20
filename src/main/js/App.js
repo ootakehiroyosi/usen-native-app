@@ -6,10 +6,11 @@ import HomeScreen from "./screens/HomeScreen";
 import NextScreen from "./screens/NextScreen";
 import SampleAuthScreen from "./screens/SampleAuthScreen";
 import SampleLiveScreen from "./screens/SampleLiveScreen";
-import ResultScreen from "./screens/ResultScreen";
+import ShopScreen from "./screens/ShopScreen";
 import SearchScreen from "./screens/SearchScreen";
+import SearchResultScreen from "./screens/SearchResultScreen";
+import LiveScreen from "./screens/LiveScreen";
 
-// ルーティング設定
 const RootStack = createStackNavigator(
   {
     Home: {
@@ -25,15 +26,10 @@ const RootStack = createStackNavigator(
       }
     },
     Result: {
-      screen: ResultScreen,
+      screen: ShopScreen,
       navigationOptions: {
-        headerTitle: "Detail"
-      }
-    },
-    Search: {
-      screen: SearchScreen,
-      navigationOptions: {
-        headerTitle: "Search"
+        headerTitle: "Detail",
+        headerForceInset: true
       }
     },
     SampleAuth: {
@@ -46,6 +42,26 @@ const RootStack = createStackNavigator(
       screen: SampleLiveScreen,
       navigationOptions: {
         headerTitle: "SampleLive"
+      }
+    },
+    Search: {
+      screen: SearchScreen,
+      navigationOptions: {
+        headerTitle: "Search",
+        headerForceInset: true
+      }
+    },
+    SearchResult: {
+      screen: SearchResultScreen,
+      navigationOptions: {
+        headerTitle: "SearchResult",
+        headerForceInset: true
+      }
+    },
+    Live: {
+      screen: LiveScreen,
+      navigationOptions: {
+        headerTitle: "Live"
       }
     }
   },
