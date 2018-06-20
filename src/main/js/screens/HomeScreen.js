@@ -129,7 +129,7 @@ const HomeScreen = props => (
 
     <View style={styles.footerNavi}>
       <Button title="HOM" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="SEA" onPress={() => props.navigation.navigate("Next")} />
+      <Button title="SEA" onPress={() => props.navigation.navigate("Search")} />
       <Button title="000" onPress={() => props.navigation.navigate("Next")} />
       <Button title="FAV" onPress={() => props.navigation.navigate("Next")} />
       <Button title="MAY" onPress={() => props.navigation.navigate("Next")} />
