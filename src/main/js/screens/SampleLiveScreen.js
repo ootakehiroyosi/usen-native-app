@@ -31,7 +31,7 @@ export default class SampleAuthScreen extends React.Component {
         <VideoPlayer
           videoProps={{
             shouldPlay: true,
-            resizeMode: Video.RESIZE_MODE_CONTAIN,
+            resizeMode: Video.RESIZE_MODE_COVER,
             source: {
               uri: ENV.SAMPLE_VIDEO_URL
             },
