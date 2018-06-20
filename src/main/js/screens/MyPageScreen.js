@@ -9,26 +9,14 @@ import {
   TouchableHighlight
 } from "react-native";
 
-const optionIcon = {
-  uri: "http://freeiconbox.com/icon/256/23669.png"
-};
-
-const pic = {
-  uri: "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
-};
+const optionIcon = require("../../img/settingIcon.png");
+const pic1 = require("../../img/mypageSample1.jpg");
+const pic2 = require("../../img/mypageSample2.jpg");
 
 const styles = StyleSheet.create({
-  scrollView: {
-    marginTop: 50
-  },
-  userName: {
-    width: 100,
-    fontSize: 26
-  },
-  optionIcon: {
-    width: 30,
-    height: 30
-  },
+  scrollView: { marginTop: 50 },
+  userName: { width: 100, fontSize: 26 },
+  optionIcon: { width: 30, height: 30 },
   myPageWrapper: {
     paddingHorizontal: 10,
     paddingVertical: 10,
@@ -40,7 +28,7 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: "left",
     fontSize: 20,
-    letterSpacing: 1.125
+    letterSpacing: 8 / 9
   },
   categoryWrapper: {
     flexDirection: "row",
@@ -51,9 +39,9 @@ const styles = StyleSheet.create({
   movieTitle: {
     paddingVertical: 10,
     paddingHorizontal: 5,
-    letterSpacing: 1.125
+    letterSpacing: 8 / 9
   },
-  movieAspect: { aspectRatio: 16 / 9 }
+  movieAspect: { aspectRatio: 16 / 9, height: 100 }
 });
 
 const MyPageScreen = props => (
@@ -82,11 +70,11 @@ const MyPageScreen = props => (
 
       <View style={styles.categoryWrapper}>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic1} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>予約中のお店①</Text>
         </View>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic2} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>予約中のお店②</Text>
         </View>
       </View>
@@ -95,11 +83,11 @@ const MyPageScreen = props => (
 
       <View style={styles.categoryWrapper}>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic1} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>お気に入り①</Text>
         </View>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic2} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>お気に入り②</Text>
         </View>
       </View>
@@ -108,11 +96,11 @@ const MyPageScreen = props => (
 
       <View style={styles.categoryWrapper}>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic1} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>登録チャンネル①</Text>
         </View>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic2} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>登録チャンネル②</Text>
         </View>
       </View>
@@ -121,11 +109,11 @@ const MyPageScreen = props => (
 
       <View style={styles.categoryWrapper}>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic1} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>履歴①</Text>
         </View>
         <View style={styles.categoryWidth}>
-          <Image source={pic} style={styles.movieAspect} />
+          <Image source={pic2} style={styles.movieAspect} />
           <Text style={styles.movieTitle}>履歴②</Text>
         </View>
       </View>

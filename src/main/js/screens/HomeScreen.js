@@ -132,7 +132,7 @@ const HomeScreen = props => (
       <Button title="SEA" onPress={() => props.navigation.navigate("Next")} />
       <Button title="000" onPress={() => props.navigation.navigate("Next")} />
       <Button title="FAV" onPress={() => props.navigation.navigate("Next")} />
-      <Button title="MAY" onPress={() => props.navigation.navigate("Next")} />
+      <Button title="MAY" onPress={() => props.navigation.navigate("MyPage")} />
     </View>
   </View>
 );
